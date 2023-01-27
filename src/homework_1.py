@@ -5,18 +5,19 @@
 # վերադարձնել այդ պրոգրեսիայի n֊րդ անդամը։
 
 def progression(a, b, n):
-	k = b - a
-	for i in range(1, n):
-		a =  a + k # amen angam a mecanum a 'k' gorcakcov
-	return a
-
+    k = b - a
+    for i in range(1, n):
+        a = a + k  # amen angam a mecanum a 'k' gorcakcov
+    return a
 
 
 def dprogression(a, b, n):
     return a + (n - 1) * (b - a)
 
+
 x = dprogression(1, 4, 12)
 print(x)
+
 
 # ! TASK 2
 # CodeMaster-ը նոր է վերադարձել գնումներից։ Նա սկանավորեց իր գնած ապրանքների չեկը եւ 
@@ -90,23 +91,26 @@ def list_remove(ls: list, n):
             ls.remove(ls[i])
     return ls
 
+
 def list_rm(ls: list, n):
-	counter = 0
-	for i in ls:
-		if i == n:
-			counter += 1
-	for i in range(counter):
-		ls.remove(n)
-	return ls
+    counter = 0
+    for i in ls:
+        if i == n:
+            counter += 1
+    for i in range(counter):
+        ls.remove(n)
+    return ls
+
 
 def list_rem(ls: list, n):
-	ret = []
-	for i in ls:
-		if i != n:
-			ret.append(i)
-	return ret
+    ret = []
+    for i in ls:
+        if i != n:
+            ret.append(i)
+    return ret
 
-print(list_rem([1,2,3, 1,1], 1))
+
+print(list_rem([1, 2, 3, 1, 1], 1))
 
 
 # ! TASK 8
