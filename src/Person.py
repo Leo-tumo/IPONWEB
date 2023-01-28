@@ -4,7 +4,7 @@ class PersonError(Exception):
 
 class Person:
 
-    def __init__(self, name, surname, gender, age, address):
+    def __init__(self, name, surname, gender='MALE', age=23, address='unknown'):
         self._name = name
         self._surname = surname
         self._gender = gender

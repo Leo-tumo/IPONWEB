@@ -4,6 +4,8 @@ from Money import Money
 from Doctor import Doctor
 from Person import Person
 from City import City
+from University import University
+from Teacher import Teacher
 import unittest
 
 LOG = print
@@ -307,6 +309,104 @@ class CityTests(unittest.TestCase):
         self.assertEqual(city.language, "English")
         city.language = "Greek"
         self.assertEqual(city.language, "Greek")
+
+
+#############################################################################
+############################## UNIVERSITY ###################################
+#############################################################################
+
+class TestUniversity(unittest.TestCase):
+
+    def setUp(self):
+        self.mayor = Person('S', 'S', 'MALE', '20', 'S')
+        self.city = City("New York", self.mayor, 900, 'HY')
+        self.rector = Person("John", "Doe", "MALE", '29', "home")
+        self.university = University("NYU", Date(18, 4, 1831), self.rector, self.city)
+
+    def test_init(self):
+        self.assertEqual(self.university.name, "NYU")
+        self.assertEqual(self.university.founded_at, Date(18, 4, 1831))
+        self.assertEqual(self.university.rector, self.rector)
+        self.assertEqual(self.university.city, self.city)
+
+    def test_repr(self):
+        self.assertEqual(repr(self.university), "University(NYU, 18-04-1831, Person(John, Doe, MALE, 29, home), "
+                                                "City(New York, Person(S, S, MALE, 20, S), 900, HY))")
+
+    def test_get_name(self):
+        self.assertEqual(self.university.name, "NYU")
+
+    def test_set_name(self):
+        self.university.name = "Columbia University"
+        self.assertEqual(self.university.name, "Columbia University")
+
+    def test_get_founded_at(self):
+        self.assertEqual(self.university.founded_at, Date(18, 4, 1831))
+
+    def test_set_rector(self):
+        new_rector = Person("Jane", "Smith", "Female", 18, 'unknown')
+        self.university.rector = new_rector
+        self.assertEqual(self.university.rector, new_rector)
+
+    def test_get_rector(self):
+        self.assertEqual(self.university.rector, self.rector)
+
+
+#############################################################################
+############################### TEACHER #####################################
+#############################################################################
+
+class TestTeacher(unittest.TestCase):
+
+    def setUp(self):
+        self.city = City("New York")
+        self.university = University("NYU", Date(18, 4, 1831), Person("Leo", "Tm"), self.city)
+        self.teacher = Teacher("Jasmine", "Kaminska", self.university, "Engineering", 5, Date(1, 9, 2016),
+                               "Computer Science", 75000)
+
+    def test_init(self):
+        self.assertEqual(self.teacher.name, "Jasmine")
+        self.assertEqual(self.teacher.surname, "Kaminska")
+        self.assertEqual(self.teacher.university, self.university)
+        self.assertEqual(self.teacher.faculty, "Engineering")
+        self.assertEqual(self.teacher.experience, 5)
+        self.assertEqual(self.teacher.start_work_at, Date(1, 9, 2016))
+        self.assertEqual(self.teacher.subject, "Computer Science")
+        self.assertEqual(self.teacher.salary, 75000)
+
+    def test_repr(self):
+        self.assertEqual(repr(self.teacher), f"Teacher(name='Jasmine', last name='Kaminska, "
+                                             f"university=University(NYU, 18-04-1831, Person(Leo, Tm, MALE, "
+                                             f"23, unknown), City(New York, God, 24000000, English)), "
+                                             f"faculty='Engineering', experience='5', start_work_at='01-09-2016', "
+                                             f"subject='Computer Science', salary='75000')")
+
+    def test_set_experience(self):
+        self.teacher.experience = 10
+        self.assertEqual(self.teacher.experience, 10)
+
+    def test_get_experience(self):
+        self.assertEqual(self.teacher.experience, 5)
+
+    def test_get_start_work_at(self):
+        self.assertEqual(self.teacher.start_work_at, Date(1, 9, 2016))
+
+    def test_get_subject(self):
+        self.assertEqual(self.teacher.subject, "Computer Science")
+
+    def test_get_faculty(self):
+        self.assertEqual(self.teacher.faculty, "Engineering")
+
+    def test_set_faculty(self):
+        self.teacher.faculty = "Science"
+        self.assertEqual(self.teacher.faculty, "Science")
+
+    def test_get_salary(self):
+        self.assertEqual(self.teacher.salary, 75000)
+
+    def test_set_salary(self):
+        self.teacher.salary = 80000
+        self.assertEqual(self.teacher.salary, 80000)
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ class CityError(Exception):
 
 
 class City:
-    def __init__(self, name, mayor, population, language):
+    def __init__(self, name, mayor='God', population=24000000, language='English'):
         self._name = name
         self._mayor = mayor
         self._population = population

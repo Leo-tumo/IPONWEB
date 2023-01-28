@@ -10,6 +10,7 @@ class DTError(Exception):
 
 class DateTime:
     def __init__(self, year: int, month: int, day: int, hour: int = 0, minute: int = 0, second: int = 0):
+
         self._date = Date(day, month, year)
         self._time = Time(hour, minute, second)
 
