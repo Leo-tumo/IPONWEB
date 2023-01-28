@@ -6,6 +6,7 @@ from Person import Person
 from City import City
 from University import University
 from Teacher import Teacher
+from Student import Student
 import unittest
 
 LOG = print
@@ -407,6 +408,56 @@ class TestTeacher(unittest.TestCase):
     def test_set_salary(self):
         self.teacher.salary = 80000
         self.assertEqual(self.teacher.salary, 80000)
+
+#############################################################################
+############################### STUDENT #####################################
+#############################################################################
+
+    class TestStudent(unittest.TestCase):
+        def test_student_init(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", "4", "01/01/2020")
+            self.assertEqual(student.name, "John")
+            self.assertEqual(student.age, 20)
+            self.assertEqual(student.university, "University of XYZ")
+            self.assertEqual(student.faculty, "Computer Science")
+            self.assertEqual(student.course, "4")
+            self.assertEqual(student.started_at, "01/01/2020")
+
+        def test_student_repr(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", "4", "01/01/2020")
+            self.assertEqual(student.__repr__(),
+                             "Student(John, 20, University of XYZ, Computer Science, 4, 01/01/2020)")
+
+        def test_set_university(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", "4", "01/01/2020")
+            student.university = "University of ABC"
+            self.assertEqual(student.university, "University of ABC")
+
+        def test_get_university(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", "4", "01/01/2020")
+            self.assertEqual(student.university, "University of XYZ")
+
+        def test_set_faculty(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", "4", "01/01/2020")
+            student.faculty = "Engineering"
+            self.assertEqual(student.faculty, "Engineering")
+
+        def test_get_faculty(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", "4", "01/01/2020")
+            self.assertEqual(student.faculty, "Computer Science")
+
+        def test_set_course(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", 4, "01/01/2020")
+            student.course = 4
+            self.assertEqual(student.course, 4)
+
+        def test_get_course(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", 4, "01/01/2020")
+            self.assertEqual(student.course, 4)
+
+        def test_get_started_at(self):
+            student = Student("John", 20, "University of XYZ", "Computer Science", 4, "01/01/2020")
+            self.assertEqual(student.started_at, "01/01/2020")
 
 
 if __name__ == '__main__':
