@@ -1,5 +1,6 @@
 #!/bin/bash
-git add .
-git commit -m "$1"
-git push origin master
+function gm() {
+     git add . && git commit -am "$1" && git push origin main
+}
 
+gm $1
