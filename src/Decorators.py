@@ -1,17 +1,17 @@
 def count_calls(func):
-    def wrapper(*args, **kwargs):
-        wrapper.num_calls += 1
+    def helper(*args, **kwargs):
+        helper.calls += 1
         return func(*args, **kwargs)
-    wrapper.num_calls = 0
-    return wrapper
+    helper.calls = 0
+    return helper
 
 @count_calls
-def my_function():
+def foo():
     pass
 
-my_function()
-print(my_function.num_calls)
-my_function()
-print(my_function.num_calls)
-my_function()
-print(my_function.num_calls)
+foo()
+print(foo.calls)
+foo()
+print(foo.calls)
+foo()
+print(foo.calls)
