@@ -46,33 +46,34 @@ class Money:
         self.__currency = value.upper()
 
     def conv_dram(self):
-        return self.__amount / self.rate[self.__currency]
+        return self.__amount * self.rate[self.__currency]
 
     def convert(self, new_currency):
         old = self.currency
         self.currency = new_currency
-        self.amount = self.amount * (self.rate[new_currency] / self.rate[old])
+        self.amount = self.amount / (self.rate[new_currency] / self.rate[old])
         return self.amount, self.currency
 
     def __add__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return Money(self.__amount + other, self.__currency)
-        return Money(round((self.conv_dram() + other.conv_dram()) * self.rate[self.__currency], 2), self.__currency)
+        return Money(round((self.conv_dram() + other.conv_dram()) / self.rate[self.__currency], 2), self.__currency)
 
     def __mul__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return Money(self.__amount * other, self.__currency)
         else:
-            return Money((self.conv_dram() * other.conv_dram()) * self.rate[self.__currency], self.__currency)
+            return Money(round(self.amount * other.convert(self.currency)[0]), self.currency)
+            # return Money((self.conv_dram() * other.conv_dram()) / self.rate[self.__currency], self.__currency)
 
     def __sub__(self, other):
-        return Money(round((self.conv_dram() - other.conv_dram()) * self.rate[self.__currency], 2), self.__currency)
+        return Money(round((self.conv_dram() - other.conv_dram()) / self.rate[self.__currency], 2), self.__currency)
 
     def __truediv__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return Money(self.__amount / other, self.__currency)
         else:
-            return Money((self.conv_dram() / other.conv_dram()) * self.rate[self.__currency], self.__currency)
+            return Money((self.conv_dram() / other.conv_dram()) / self.rate[self.__currency], self.__currency)
 
     def __eq__(self, other):
         return self.conv_dram() == other.conv_dram()
