@@ -1,0 +1,1051 @@
+{
+	"info": {
+		"_postman_id": "09a17e91-cb48-4a1b-a685-2ca87891ded4",
+		"name": "Homework8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25802628"
+	},
+	"item": [
+		{
+			"name": "StoreCategory",
+			"item": [
+				{
+					"name": "StoreCategoryGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/store_category/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreCategoryPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"shoes\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/store_category/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreCategorySingleEdit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Man Shoes\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/store_category/5/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_category",
+								"5",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Man Shoes",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreCategorySingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost}}api/store_category/4/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_category",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreCategorySingleGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{store_category}}?id=5",
+							"host": [
+								"{{store_category}}"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ItemCategory",
+			"item": [
+				{
+					"name": "ItemCategoryGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/item_category/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item_category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemCategoryPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Item Category Name\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/item_category/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item_category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemCategorySingleEdit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New name\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/item_category/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item_category",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemCategorySingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/item_category/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item_category",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemCategorySingleGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/item_category/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item_category",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "CustomerGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/customer/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"customer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CustomerPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user\": 1}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/customer/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"customer",
+								""
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CustomerSingleEdit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 2\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/customer/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"customer",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CustomerSingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/customer/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"customer",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CustomerSingleGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/customer/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"customer",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "Owner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/store_owner/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_owner",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OwnerGetSingle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost}}api/store_owner/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_owner",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OwnerPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 2\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/store_owner/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_owner",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OwnerSingleEdit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Other name\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/store_owner/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_owner",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OwnerSingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/store_owner/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_owner",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "StoreGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/store/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StorePost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"some name\",\n    \"owner_id\": 1,\n    \"store_category_id\": 5\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/store/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreGetSingle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/store/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreSingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/store/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreSingleEdit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"some name\",\n    \"owner_id\": 1,\n    \"store_category_id\": 1\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/store/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"store",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "ItemGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/item/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemGetSingle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/item/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"store_id\": 1,\n    \"category_id\": 5,\n    \"name\": \"Nike\",\n    \"price\": 12354,\n    \"quantity\": 100,\n    \"info\": \"some info\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/item/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemSingleEdit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"store_id\": 1,\n    \"category_id\": 5,\n    \"name\": \"Nike One\",\n    \"price\": 12354,\n    \"quantity\": 90,\n    \"info\": \"some info\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/item/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemSingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/item/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"item",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MyBag",
+			"item": [
+				{
+					"name": "MyBagGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/mybug/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyBagPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": [1,2,3]\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/mybug/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyBagGetSingle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/mybug/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyBagSingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/mybug/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyBagSingleEditDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": {\"status\": 'delete', \"ids\": [1,2]}\n}\n"
+						},
+						"url": {
+							"raw": "{{localhost}}api/mybug/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyBagSingleEditAdd",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": {\"status\": \"add\", \"ids\": [3,4]}\n}\n"
+						},
+						"url": {
+							"raw": "{{localhost}}api/mybug/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyBagSingleEditClear",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": {\"status\": \"clear\"}\n}\n"
+						},
+						"url": {
+							"raw": "{{localhost}}api/mybug/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"mybug",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "PurchaseGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/purchase/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PurchasePost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": [1,2,3]\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/purchase/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PurchaseGetSingle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/purchase/?id=1",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PurchaseSingleDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/purchase/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PurchaseSingleEditDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": {\"status\": \"delete\", \"ids\": [2,4]}\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/purchase/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PurchaseSingleEditAdd",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": {\"status\": \"add\", \"ids\": [2,4]}\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/purchase/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PurchaseSingleEditClear",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": {\"status\": \"clear\"}\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}api/purchase/1/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"purchase",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

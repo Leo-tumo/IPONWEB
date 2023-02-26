@@ -25,6 +25,7 @@ class ItemView(View):
 	#
     def post(self, request):
         data = json.loads(request.body)
+
         if 'price' in data and 'quantity' in data and 'name' in data and 'store_id' in data and 'category_id' in data:
             try:
                 item = Item.objects.create(
